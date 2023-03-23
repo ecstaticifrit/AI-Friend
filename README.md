@@ -13,7 +13,7 @@ It also requires you to have Vtube Studio installed and install the Desktop Audi
 Check this video for installing the plugin: (https://www.youtube.com/watch?v=IiZ0JrGd6BQ&t=371s)
 
 # Usage
-Edit the variable api_key. This is the API key for OpenAI, which can be found here:
+Edit the variable `api_key`. This is the API key for OpenAI, which can be found here:
 https://platform.openai.com/account/api-keys
 
 # Voices
