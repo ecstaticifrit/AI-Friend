@@ -9,10 +9,10 @@ pip install SpeechRecognition
 pip install pyttsx3
 ```
 
-It also requires you to have Vtube Studio installed and install the Desktop Audio VTube Studio plugin. 
+It also requires you to have VTube Studio installed and install the Desktop Audio VTube Studio plugin. 
 Check this video for installing and setting up the plugin: (https://www.youtube.com/watch?v=IiZ0JrGd6BQ&t=371s)
 
-# Usage
+# API Keys
 Edit the variable `api_key`. This is the API key for OpenAI, which can be found here:
 https://platform.openai.com/account/api-keys
 
