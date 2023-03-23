@@ -20,4 +20,4 @@ https://platform.openai.com/account/api-keys
 You can change the voice using `voices[n].id`
 Set n = 0 for male, 1 for female.
 
-Now you're all set to start tslking with your AI friend and maybe learn something new along the way
+Now you're all set to start talking to your AI friend and maybe learn something new along the way
