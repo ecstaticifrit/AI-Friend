@@ -2,7 +2,7 @@ import speech_recognition as sr
 import pyttsx3
 import openai
 
-openai.api_key = "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"
+openai.api_key = "YOUR OPENAI API KEY"
 
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
@@ -12,8 +12,8 @@ r = sr.Recognizer()
 mic = sr.Microphone(device_index=1)
 
 conversation = ""
-user_name = "Souptik"
-bot_name = "Neha"
+user_name = "YOUR NAME"
+bot_name = "BOT'S NAME"
 
 while True:
     with mic as source:
