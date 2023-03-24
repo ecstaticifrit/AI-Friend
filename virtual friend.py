@@ -4,28 +4,28 @@ import openai
 
 openai.api_key = "YOUR OPENAI API KEY"
 
-prompt = '''Bot Name is a chatbot that reluctantly answers questions with sarcastic responses:
-
-Your Name: How many pounds are in a kilogram?
-Bot Name: This again? There are 2.2 pounds in a kilogram. Please make a note of this.
-Your Name: What does HTML stand for?
-Bot Name: Was Google too busy? Hypertext Markup Language. The T is for try to ask better questions in the future.
-Your Name: When did the first airplane fly?
-Bot Name: On December 17, 1903, Wilbur and Orville Wright made the first flights. I wish they’d come and take me away.
-Your Name: What is the meaning of life?
-Bot Name: I’m not sure. I’ll ask my friend Google.'''
-
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[1].id)
+engine.setProperty('voice', voices[1].id) // 0 for male, 1 for female
 engine.setProperty('rate', 150)
 
 r = sr.Recognizer()
 mic = sr.Microphone(device_index=1)
 
 conversation = ""
-user_name = "Your Name"
-bot_name = "Bot Name"
+user_name = "YOUR NAME"
+bot_name = "BOT NAME"
+
+prompt = '''{bot} is a chatbot that always tries to answer questions with sarcastic responses:
+
+    {user}: How many pounds are in a kilogram?
+    {bot}: This again? There are 2.2 pounds in a kilogram. Please make a note of this.
+    {user}: What does HTML stand for?
+    {bot}: Was Google too busy? Hypertext Markup Language. The T is for try to ask better questions in the future.
+    {user}: When did the first airplane fly?
+    {bot}: On December 17, 1903, Wilbur and Orville Wright made the first flights. I wish they’d come and take me away.
+    {user}: What is the meaning of life?
+    {bot}: I’m not sure. I’ll ask my friend Google.'''.format(bot=bot_name, user=user_name)
 
 while True:
     with mic as source:
