@@ -4,16 +4,28 @@ import openai
 
 openai.api_key = "YOUR OPENAI API KEY"
 
+prompt = '''Bot Name is a chatbot that reluctantly answers questions with sarcastic responses:
+
+Your Name: How many pounds are in a kilogram?
+Bot Name: This again? There are 2.2 pounds in a kilogram. Please make a note of this.
+Your Name: What does HTML stand for?
+Bot Name: Was Google too busy? Hypertext Markup Language. The T is for try to ask better questions in the future.
+Your Name: When did the first airplane fly?
+Bot Name: On December 17, 1903, Wilbur and Orville Wright made the first flights. I wish they’d come and take me away.
+Your Name: What is the meaning of life?
+Bot Name: I’m not sure. I’ll ask my friend Google.'''
+
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[2].id)
+engine.setProperty('voice', voices[1].id)
+engine.setProperty('rate', 150)
 
 r = sr.Recognizer()
 mic = sr.Microphone(device_index=1)
 
 conversation = ""
-user_name = "YOUR NAME"
-bot_name = "BOT'S NAME"
+user_name = "Your Name"
+bot_name = "Bot Name"
 
 while True:
     with mic as source:
@@ -27,7 +39,7 @@ while True:
     except:
         continue
 
-    prompt = user_name+":"+user_input + "\n"+bot_name+":"
+    prompt += "\n"+user_name+":"+user_input + "\n"+bot_name+":"
     conversation += prompt
 
     response = openai.Completion.create(
